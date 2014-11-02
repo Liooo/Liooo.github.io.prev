@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: cate2 | Ryo's Engieer Blog]]></title>
-  <link href="http://lio-.github.io/blog/categories/cate2/atom.xml" rel="self"/>
-  <link href="http://lio-.github.io/"/>
-  <updated>2014-11-02T13:00:12+09:00</updated>
-  <id>http://lio-.github.io/</id>
+  <link href="http://liooo.github.io/blog/categories/cate2/atom.xml" rel="self"/>
+  <link href="http://liooo.github.io/"/>
+  <updated>2014-11-02T14:34:39+09:00</updated>
+  <id>http://liooo.github.io/</id>
   <author>
     <name><![CDATA[Ryo Yamada]]></name>
     <email><![CDATA[ryoyamada3@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[test article]]></title>
-    <link href="http://lio-.github.io/blog/2014/10/29/test-article/"/>
+    <link href="http://liooo.github.io/blog/2014/10/29/test-article/"/>
     <updated>2014-10-29T10:52:03+09:00</updated>
-    <id>http://lio-.github.io/blog/2014/10/29/test-article</id>
+    <id>http://liooo.github.io/blog/2014/10/29/test-article</id>
     <content type="html"><![CDATA[<p>good day mate</p>
 
 <pre><code class="ruby url.rb https://raw.githubusercontent.com/screeninteraction/jekyll-multiple-languages-plugin/master/Rakefile linktext">download me
