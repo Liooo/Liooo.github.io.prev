@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Ryo's Engieer Blog]]></title>
+  <link href="http://lio-.github.io/atom.xml" rel="self"/>
+  <link href="http://lio-.github.io/"/>
+  <updated>2014-11-02T13:00:12+09:00</updated>
+  <id>http://lio-.github.io/</id>
+  <author>
+    <name><![CDATA[Ryo Yamada]]></name>
+    <email><![CDATA[ryoyamada3@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[テスト]]></title>
+    <link href="http://lio-.github.io/jp/blog/2014/10/29/test-article/"/>
+    <updated>2014-10-29T10:52:03+09:00</updated>
+    <id>http://lio-.github.io/jp/blog/2014/10/29/test-article</id>
+    <content type="html"><![CDATA[<p>good day mate</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[test article]]></title>
+    <link href="http://lio-.github.io/blog/2014/10/29/test-article/"/>
+    <updated>2014-10-29T10:52:03+09:00</updated>
+    <id>http://lio-.github.io/blog/2014/10/29/test-article</id>
+    <content type="html"><![CDATA[<p>good day mate</p>
+
+<figure class='code'><figcaption><span>url.rb</span><a href='https://raw.githubusercontent.com/screeninteraction/jekyll-multiple-languages-plugin/master/Rakefile'>linktext</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">download</span> <span class="n">me</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>a.rb </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Xaaa</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s1">&#39;fuck&#39;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">aaa</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s1">&#39;aa&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[テスト28]]></title>
+    <link href="http://lio-.github.io/jp/blog/2014/10/28/test-article/"/>
+    <updated>2014-10-28T10:52:03+09:00</updated>
+    <id>http://lio-.github.io/jp/blog/2014/10/28/test-article</id>
+    <content type="html"><![CDATA[<p>good day mate</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[from 10 28]]></title>
+    <link href="http://lio-.github.io/blog/2014/10/28/test-article/"/>
+    <updated>2014-10-28T10:52:03+09:00</updated>
+    <id>http://lio-.github.io/blog/2014/10/28/test-article</id>
+    <content type="html"><![CDATA[<p>good day mate</p>
+
+<figure class='code'><figcaption><span>url.rb</span><a href='https://raw.githubusercontent.com/screeninteraction/jekyll-multiple-languages-plugin/master/Rakefile'>linktext</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">download</span> <span class="n">me</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>a.rb </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Xaaa</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s1">&#39;fuck&#39;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">aaa</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s1">&#39;aa&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+</feed>

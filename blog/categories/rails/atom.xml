@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rails | Ryo's Engieer Blog]]></title>
+  <link href="http://lio-.github.io/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://lio-.github.io/"/>
+  <updated>2014-11-02T13:00:12+09:00</updated>
+  <id>http://lio-.github.io/</id>
+  <author>
+    <name><![CDATA[Ryo Yamada]]></name>
+    <email><![CDATA[ryoyamada3@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[from 10 28]]></title>
+    <link href="http://lio-.github.io/blog/2014/10/28/test-article/"/>
+    <updated>2014-10-28T10:52:03+09:00</updated>
+    <id>http://lio-.github.io/blog/2014/10/28/test-article</id>
+    <content type="html"><![CDATA[<p>good day mate</p>
+
+<pre><code class="ruby url.rb https://raw.githubusercontent.com/screeninteraction/jekyll-multiple-languages-plugin/master/Rakefile linktext">download me
+</code></pre>
+
+<pre><code class="ruby a.rb ">class Xaaa
+  def initialize
+    p 'fuck'
+  end
+end
+
+def aaa
+  p 'aa'
+end
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
