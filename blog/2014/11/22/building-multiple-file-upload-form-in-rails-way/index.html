@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Building Multiple File Upload Form in Rails Way - Ryo&#8217;s Engieer Blog</title>
+	<title>Building Form for Multiple File Upload in Rails Way - Ryo&#8217;s Engieer Blog</title>
 	<meta name="author" content="Ryo Yamada">
 
 	
-	<meta name="description" content="Nov 22nd, 2014 rails, ruby Building Multiple File Upload Form in Rails Way Background Gems Instruction Scaffolding the App Form for has_many &hellip;">
+	<meta name="description" content="Nov 22nd, 2014 rails, ruby Building Form for Multiple File Upload in Rails Way Background Gems Instruction Scaffolding the App Form for has_many &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -129,7 +129,7 @@
 
 </div>
     </div>
-	<h2 class="title" itemprop="name">Building Multiple File Upload Form in Rails Way</h2>
+	<h2 class="title" itemprop="name">Building Form for Multiple File Upload in Rails Way</h2>
 	<div class="entry-content" itemprop="articleBody"><ul id="markdown-toc">
   <li><a href="#background">Background</a></li>
   <li><a href="#gems">Gems</a></li>
@@ -138,7 +138,7 @@
       <li><a href="#form-for-hasmany-relation-with-cocoon">Form for has_many relation with Cocoon</a></li>
       <li><a href="#showing-thumbnail">Showing Thumbnail</a></li>
       <li><a href="#redisplaying-thumbnail-on-validation-fail">Redisplaying thumbnail on validation fail</a></li>
-      <li><a href="#rejecting-empty-photo-field">Rejecting Empty Photo Field</a></li>
+      <li><a href="#rejecting-empty-photo-fields">Rejecting Empty Photo Fields</a></li>
     </ul>
   </li>
 </ul>
@@ -448,9 +448,9 @@ Carrierwave has a nice feature for handling this situation. It not only lets us 
 </span><span class="line"><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h4 id="rejecting-empty-photo-field">Rejecting Empty Photo Field</h4>
+<h4 id="rejecting-empty-photo-fields">Rejecting Empty Photo Fields</h4>
 
-<p>If you fill in the name and click ‘add a photo’ button several times and post the form, you’ll see models with no photo are created. To avoid this, use <code>reject_if</code> option. </p>
+<p>If you fill in the name, click ‘add a photo’ button several times and post it, you’ll see models with no photo are created. To avoid this, use <code>reject_if</code> option. </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>app/models/user.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -468,7 +468,7 @@ Carrierwave has a nice feature for handling this situation. It not only lets us 
 </span><span class="line"><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>You could also add a validator on the UserPhoto model to prevent creation of empty file model.</p>
+<p>You could also add a validator on the UserPhoto model to prevent creation of model with empty file.</p>
 </div>
 
 </article>

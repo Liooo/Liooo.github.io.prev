@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | Ryo's Engieer Blog]]></title>
   <link href="http://liooo.github.io/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://liooo.github.io/"/>
-  <updated>2014-11-23T07:08:17+09:00</updated>
+  <updated>2014-11-23T07:13:26+09:00</updated>
   <id>http://liooo.github.io/</id>
   <author>
     <name><![CDATA[Ryo Yamada]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Building Multiple File Upload Form in Rails Way]]></title>
+    <title type="html"><![CDATA[Building Form for Multiple File Upload in Rails Way]]></title>
     <link href="http://liooo.github.io/blog/2014/11/22/building-multiple-file-upload-form-in-rails-way/"/>
     <updated>2014-11-22T16:32:05+09:00</updated>
     <id>http://liooo.github.io/blog/2014/11/22/building-multiple-file-upload-form-in-rails-way</id>
@@ -26,7 +26,7 @@
       <li><a href="#form-for-hasmany-relation-with-cocoon">Form for has_many relation with Cocoon</a></li>
       <li><a href="#showing-thumbnail">Showing Thumbnail</a></li>
       <li><a href="#redisplaying-thumbnail-on-validation-fail">Redisplaying thumbnail on validation fail</a></li>
-      <li><a href="#rejecting-empty-photo-field">Rejecting Empty Photo Field</a></li>
+      <li><a href="#rejecting-empty-photo-fields">Rejecting Empty Photo Fields</a></li>
     </ul>
   </li>
 </ul>
@@ -259,9 +259,9 @@ def user_params
 end
 </code></p>
 
-<h4 id="rejecting-empty-photo-field">Rejecting Empty Photo Field</h4>
+<h4 id="rejecting-empty-photo-fields">Rejecting Empty Photo Fields</h4>
 
-<p>If you fill in the name and click ‘add a photo’ button several times and post the form, you’ll see models with no photo are created. To avoid this, use <code>reject_if</code> option. </p>
+<p>If you fill in the name, click ‘add a photo’ button several times and post it, you’ll see models with no photo are created. To avoid this, use <code>reject_if</code> option. </p>
 
 <p><code>ruby app/models/user.rb
 class User &lt; ActiveRecord::Base
@@ -273,7 +273,7 @@ class User &lt; ActiveRecord::Base
 end
 </code></p>
 
-<p>You could also add a validator on the UserPhoto model to prevent creation of empty file model.</p>
+<p>You could also add a validator on the UserPhoto model to prevent creation of model with empty file.</p>
 ]]></content>
   </entry>
   
