@@ -9,12 +9,7 @@
 	<meta name="author" content="Ryo Yamada">
 
 	
-	<meta name="description" content="All Posts Hahahaaaa Mate! Sub Mate!! haaaa
-asdfa
-asd
-f sub sub mate.. asdfas
-df
-asd written cate1, ruby Read on &rarr; テスト good day mate written &hellip;">
+	<meta name="description" content="All Posts Building Multiple File Upload Form in Rails Way Background Gems Instruction Scaffolding the App Form for has_many relation with Cocoon &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -104,7 +99,7 @@ asd written cate1, ruby Read on &rarr; テスト good day mate written &hellip;"
 </nav>
 
 <div class="header-section">
-    <a href='/blog/categories/cate1' style='font-size: 160.0%'>cate1(3)</a> <a href='/blog/categories/cate2' style='font-size: 120.0%'>cate2(1)</a> <a href='/blog/categories/cate3' style='font-size: 120.0%'>cate3(1)</a> <a href='/blog/categories/cate4' style='font-size: 120.0%'>cate4(1)</a> <a href='/blog/categories/cate5' style='font-size: 120.0%'>cate5(1)</a> <a href='/blog/categories/cate6' style='font-size: 120.0%'>cate6(1)</a> <a href='/blog/categories/rails' style='font-size: 140.0%'>rails(2)</a> <a href='/blog/categories/ruby' style='font-size: 140.0%'>ruby(2)</a> 
+    <a href='/blog/categories/rails' style='font-size: 160.0%'>rails(1)</a> <a href='/blog/categories/ruby' style='font-size: 160.0%'>ruby(1)</a> 
 </div>
 
 <div class="header-section">
@@ -138,43 +133,36 @@ asd written cate1, ruby Read on &rarr; テスト good day mate written &hellip;"
       
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
-          <article>
-  <h2><a href="/blog/2014/11/02/hahahaaaa/">Hahahaaaa</a></h2>
+          <article class="blog-index">
+  <h2><a href="/blog/2014/11/22/building-multiple-file-upload-form-in-rails-way/">Building Multiple File Upload Form in Rails Way</a></h2>
   
   <p>
-    <h1>Mate!</h1>
+    <ul id="markdown-toc">
+  <li><a href="#background">Background</a></li>
+  <li><a href="#gems">Gems</a></li>
+  <li><a href="#instruction">Instruction</a>    <ul>
+      <li><a href="#scaffolding-the-app">Scaffolding the App</a></li>
+      <li><a href="#form-for-hasmany-relation-with-cocoon">Form for has_many relation with Cocoon</a></li>
+      <li><a href="#showing-thumbnail">Showing Thumbnail</a></li>
+      <li><a href="#redisplaying-thumbnail-on-validation-fail">Redisplaying thumbnail on validation fail</a></li>
+      <li><a href="#rejecting-empty-photo-field">Rejecting Empty Photo Field</a></li>
+    </ul>
+  </li>
+</ul>
 
+<h3 id="background">Background</h3>
+<p>Here I’ll introduce a way to build a file upload form that</p>
 
+<ol>
+  <li>uploads multiple files at a time</li>
+  <li>can add/remove file input fields dynamically</li>
+  <li>shows preview when an image file is chosen</li>
+  <li>if any errors exist in the form, the file inputs memorize and redisplay the selected file</li>
+  <li>can remove existing files</li>
+  <li>use plain html form, NOT xhr (therefore, no file drag and drop feature)</li>
+</ol>
 
-
-<p><img src="/images/terminal.png" alt="pretty me" /></p>
-
-
-
-
-<h2>Sub Mate!!</h2>
-
-
-
-
-<p>haaaa
-asdfa
-asd
-f</p>
-
-
-
-
-<h3>sub sub mate..</h3>
-
-
-
-
-<p>asdfas
-df
-asd</p>
-
-
+<p>See <a href="https://github.com/Liooo/carrierwave-cocoon-file-upload-app-demo">Repository</a> for the complete app.</p>
 
 
   </p>
@@ -191,193 +179,7 @@ asd</p>
   
 
 
-<time datetime="2014-11-02T16:00:48+09:00" data-updated="true" itemprop="datePublished"></time>
-    
-
-
-	<a class='category' href='/blog/categories/cate1/'>cate1</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
-
-
-
-  </span>
-
-  
-    <a class="full-article-link pull-right" rel="full-article" href="/blog/2014/11/02/hahahaaaa/">Read on &rarr;</a>
-  
-</article>
-
-        </div>
-      </div>
-      
-      
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-          <article>
-  <h2><a href="/jp/blog/2014/10/29/test-article/">テスト</a></h2>
-  
-  <p>
-    <p>good day mate</p>
-
-
-  </p>
-  <span class="meta">
-    written 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-29T10:52:03+09:00" data-updated="true" itemprop="datePublished"></time>
-    
-
-
-	<a class='category' href='/blog/categories/cate1/'>cate1</a>, <a class='category' href='/blog/categories/rails/'>rails</a>
-
-
-
-  </span>
-
-  
-</article>
-
-        </div>
-      </div>
-      
-      
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-          <article>
-  <h2><a href="/blog/2014/10/29/test-article/">Test Article</a></h2>
-  
-  <p>
-    <p>good day mate</p>
-
-
-
-
-<figure class='code'><figcaption><span>url.rb</span><a href='https://raw.githubusercontent.com/screeninteraction/jekyll-multiple-languages-plugin/master/Rakefile'>linktext</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">download</span> <span class="n">me</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>a.rb </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Xaaa</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span>
-</span><span class='line'>    <span class="nb">p</span> <span class="s1">&#39;fuck&#39;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">aaa</span>
-</span><span class='line'>  <span class="nb">p</span> <span class="s1">&#39;aa&#39;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-  </p>
-  <span class="meta">
-    written 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-29T10:52:03+09:00" data-updated="true" itemprop="datePublished"></time>
-    
-
-
-	<a class='category' href='/blog/categories/cate1/'>cate1</a>, <a class='category' href='/blog/categories/cate2/'>cate2</a>, <a class='category' href='/blog/categories/cate3/'>cate3</a>, <a class='category' href='/blog/categories/cate4/'>cate4</a>, <a class='category' href='/blog/categories/cate5/'>cate5</a>, <a class='category' href='/blog/categories/cate6/'>cate6</a>
-
-
-
-  </span>
-
-  
-</article>
-
-        </div>
-      </div>
-      
-      
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-          <article>
-  <h2><a href="/blog/2014/10/28/test-article/">From 10 28</a></h2>
-  
-  <p>
-    <p>good day mate</p>
-
-
-
-
-<figure class='code'><figcaption><span>url.rb</span><a href='https://raw.githubusercontent.com/screeninteraction/jekyll-multiple-languages-plugin/master/Rakefile'>linktext</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">download</span> <span class="n">me</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>a.rb </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Xaaa</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span>
-</span><span class='line'>    <span class="nb">p</span> <span class="s1">&#39;fuck&#39;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">aaa</span>
-</span><span class='line'>  <span class="nb">p</span> <span class="s1">&#39;aa&#39;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-  </p>
-  <span class="meta">
-    written 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-28T10:52:03+09:00" data-updated="true" itemprop="datePublished"></time>
+<time datetime="2014-11-22T16:32:05+09:00" data-updated="true" itemprop="datePublished"></time>
     
 
 
@@ -388,41 +190,7 @@ asd</p>
   </span>
 
   
-</article>
-
-        </div>
-      </div>
-      
-      
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-          <article>
-  <h2><a href="/jp/blog/2014/10/28/test-article/">テスト28</a></h2>
-  
-  <p>
-    <p>good day mate</p>
-
-
-  </p>
-  <span class="meta">
-    written 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-28T10:52:03+09:00" data-updated="true" itemprop="datePublished"></time>
-    
-
-
-  </span>
-
+    <a class="full-article-link pull-right" rel="full-article" href="/blog/2014/11/22/building-multiple-file-upload-form-in-rails-way/">Read on &rarr;</a>
   
 </article>
 
@@ -439,7 +207,7 @@ asd</p>
     Ryo Yamada
 
 
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+</footer>
 		</div>
 	</div>
 	
