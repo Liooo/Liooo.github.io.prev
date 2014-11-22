@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Ryo's Engieer Blog]]></title>
   <link href="http://liooo.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://liooo.github.io/"/>
-  <updated>2014-11-23T07:13:26+09:00</updated>
+  <updated>2014-11-23T07:37:42+09:00</updated>
   <id>http://liooo.github.io/</id>
   <author>
     <name><![CDATA[Ryo Yamada]]></name>
@@ -20,7 +20,11 @@
     <id>http://liooo.github.io/blog/2014/11/22/building-multiple-file-upload-form-in-rails-way</id>
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#background">Background</a></li>
-  <li><a href="#gems">Gems</a></li>
+  <li><a href="#gems">Gems</a>    <ul>
+      <li><a href="#carrierwave">CarrierWave</a></li>
+      <li><a href="#cocoon">Cocoon</a></li>
+    </ul>
+  </li>
   <li><a href="#instruction">Instruction</a>    <ul>
       <li><a href="#scaffolding-the-app">Scaffolding the App</a></li>
       <li><a href="#form-for-hasmany-relation-with-cocoon">Form for has_many relation with Cocoon</a></li>
@@ -34,14 +38,14 @@
 <h3 id="background">Background</h3>
 <p>Here I’ll introduce a way to build a file upload form that</p>
 
-<ol>
+<ul>
   <li>uploads multiple files at a time</li>
   <li>can add/remove file input fields dynamically</li>
   <li>shows preview when an image file is chosen</li>
   <li>if any errors exist in the form, the file inputs memorize and redisplay the selected file</li>
   <li>can remove existing files</li>
   <li>use plain html form, NOT xhr (therefore, no file drag and drop feature)</li>
-</ol>
+</ul>
 
 <p>See <a href="https://github.com/Liooo/carrierwave-cocoon-file-upload-app-demo">Github Repository</a> for the complete app.</p>
 
@@ -49,7 +53,7 @@
 
 <h3 id="gems">Gems</h3>
 
-<h4 class="no_toc" id="carrierwave">CarrierWave</h4>
+<h4 id="carrierwave">CarrierWave</h4>
 
 <p>Use <a href="https://github.com/carrierwaveuploader/carrierwave">CarrierWave</a> to handle files in the app.</p>
 
@@ -60,7 +64,7 @@
   <li><a href="https://github.com/thoughtbot/paperclip">Paperclip</a> (doesn’t support <a href="https://github.com/carrierwaveuploader/carrierwave#making-uploads-work-across-form-redisplays">file cache</a> )</li>
 </ul>
 
-<h4 class="no_toc" id="cocoon">Cocoon</h4>
+<h4 id="cocoon">Cocoon</h4>
 
 <p><a href="https://github.com/nathanvda/cocoon">Cocoon</a> helps generating multiple input fields for has_many relation models.</p>
 

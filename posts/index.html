@@ -9,7 +9,7 @@
 	<meta name="author" content="Ryo Yamada">
 
 	
-	<meta name="description" content="All Posts Building Form for Multiple File Upload in Rails Way Background Gems Instruction Scaffolding the App Form for has_many relation with Cocoon &hellip;">
+	<meta name="description" content="All Posts Building Form for Multiple File Upload in Rails Way Background Gems CarrierWave Cocoon Instruction Scaffolding the App Form for has_many &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -139,7 +139,11 @@
   <p>
     <ul id="markdown-toc">
   <li><a href="#background">Background</a></li>
-  <li><a href="#gems">Gems</a></li>
+  <li><a href="#gems">Gems</a>    <ul>
+      <li><a href="#carrierwave">CarrierWave</a></li>
+      <li><a href="#cocoon">Cocoon</a></li>
+    </ul>
+  </li>
   <li><a href="#instruction">Instruction</a>    <ul>
       <li><a href="#scaffolding-the-app">Scaffolding the App</a></li>
       <li><a href="#form-for-hasmany-relation-with-cocoon">Form for has_many relation with Cocoon</a></li>
@@ -153,14 +157,14 @@
 <h3 id="background">Background</h3>
 <p>Here I’ll introduce a way to build a file upload form that</p>
 
-<ol>
+<ul>
   <li>uploads multiple files at a time</li>
   <li>can add/remove file input fields dynamically</li>
   <li>shows preview when an image file is chosen</li>
   <li>if any errors exist in the form, the file inputs memorize and redisplay the selected file</li>
   <li>can remove existing files</li>
   <li>use plain html form, NOT xhr (therefore, no file drag and drop feature)</li>
-</ol>
+</ul>
 
 <p>See <a href="https://github.com/Liooo/carrierwave-cocoon-file-upload-app-demo">Github Repository</a> for the complete app.</p>
 
