@@ -4,7 +4,7 @@
   <title><![CDATA[Ryo's Engieer Blog]]></title>
   <link href="http://liooo.github.io/atom.xml" rel="self"/>
   <link href="http://liooo.github.io/"/>
-  <updated>2014-11-23T07:06:49+09:00</updated>
+  <updated>2014-11-23T07:08:13+09:00</updated>
   <id>http://liooo.github.io/</id>
   <author>
     <name><![CDATA[Ryo Yamada]]></name>
@@ -43,7 +43,7 @@
   <li>use plain html form, NOT xhr (therefore, no file drag and drop feature)</li>
 </ol>
 
-<p>See <a href="https://github.com/Liooo/carrierwave-cocoon-file-upload-app-demo">Repository</a> for the complete app.</p>
+<p>See <a href="https://github.com/Liooo/carrierwave-cocoon-file-upload-app-demo">Github Repository</a> for the complete app.</p>
 
 <!-- more -->
 
