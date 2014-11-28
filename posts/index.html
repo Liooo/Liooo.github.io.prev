@@ -9,7 +9,7 @@
 	<meta name="author" content="Ryo Yamada">
 
 	
-	<meta name="description" content="All Posts Building Form for Multiple File Upload in Rails Way Background Gems CarrierWave Cocoon Instruction Scaffolding the App Form for has_many &hellip;">
+	<meta name="description" content="All Posts East Asian Multibyte Character Piles Up in Vim/iTerm2/OS X Environment Multibyte characters were piling up to each other in my vim on &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,7 +99,7 @@
 </nav>
 
 <div class="header-section">
-    <a href='/blog/categories/rails' style='font-size: 160.0%'>rails(1)</a> <a href='/blog/categories/ruby' style='font-size: 160.0%'>ruby(1)</a> 
+    <a href='/blog/tags/iterm2' style='font-size: 160.0%'>iTerm2(1)</a> <a href='/blog/tags/osx' style='font-size: 160.0%'>OSX(1)</a> <a href='/blog/tags/rails' style='font-size: 160.0%'>rails(1)</a> <a href='/blog/tags/ruby' style='font-size: 160.0%'>ruby(1)</a> <a href='/blog/tags/vim' style='font-size: 160.0%'>vim(1)</a> 
 </div>
 
 <div class="header-section">
@@ -110,6 +110,7 @@
   </ul>
 </section>
 
+</div>
 </header>				
 			</div>
 		</div>	
@@ -129,6 +130,68 @@
 
   <div class="article-list">
     <div class="container">
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article class="blog-index">
+  <h2><a href="/blog/2014/11/28/east-asian-multibyte-character-piles-up-in-vim-slash-iterm2-slash-os-x-environment/">East Asian Multibyte Character Piles Up in Vim/iTerm2/OS X Environment</a></h2>
+  
+  <p>
+    <p><img src="/images/20141128/characters_piling_up.png" alt="characters pililng up" /></p>
+
+<p>Multibyte characters were piling up to each other in my vim on iTerm2 like above.</p>
+
+<p>Here’s how to fix this.</p>
+
+<h3 id="vim-setting">vim setting</h3>
+<p>Add the following line to .vimrc</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>~/.vimrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="nb">set </span><span class="nv">ambiwidth</span><span class="o">=</span>double
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>It’s telling vim to double the width of characters having <a href="http://www.unicode.org/reports/tr11/#Ambiguous">Ambiguous Character Width</a>.</p>
+
+<h3 id="iterm2-setting">iTerm2 setting</h3>
+
+<p>Tick the checkbox and tell iTerm2 to do the same. </p>
+
+<p><img src="/images/20141128/iTerm2_setting.png" alt="iTerm2" /></p>
+
+<p>That’s it, fixed!</p>
+
+<p><img src="/images/20141128/fixed.png" alt="fixed" /></p>
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-28T17:38:47+09:00" data-updated="true" itemprop="datePublished"></time>
+    
+
+
+	<a class='tag' href='/blog/tags/osx/'>OSX</a>, <a class='tag' href='/blog/tags/iterm2/'>iTerm2</a>, <a class='tag' href='/blog/tags/vim/'>vim</a>
+
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
       
       
       <div class="row">
@@ -187,7 +250,7 @@
     
 
 
-	<a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
+	<a class='tag' href='/blog/tags/rails/'>rails</a>, <a class='tag' href='/blog/tags/ruby/'>ruby</a>
 
 
 

@@ -1,61 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://liooo.github.io/blog/2014/11/28/east-asian-multibyte-character-piles-up-in-vim-slash-iterm2-slash-os-x-environment/</loc>
+    <lastmod>2014-11-28T17:38:47+09:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://liooo.github.io/blog/2014/11/22/building-multiple-file-upload-form-in-rails-way/</loc>
     <lastmod>2014-11-22T16:32:05+09:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://liooo.github.io/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://liooo.github.io/about/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://liooo.github.io/blog/archives/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://liooo.github.io/blog/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://liooo.github.io/archives/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://liooo.github.io/blog/</loc>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://liooo.github.io/posts/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://liooo.github.io/jp/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://liooo.github.io/jp/about/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://liooo.github.io/blog/categories/</loc>
-    <lastmod>2014-11-23T07:37:42+09:00</lastmod>
+    <lastmod>2014-11-29T05:50:59+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
