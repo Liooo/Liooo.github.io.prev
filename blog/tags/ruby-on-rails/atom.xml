@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Tag: rails | Ryo's Engieer Blog]]></title>
-  <link href="http://liooo.github.io/blog/tags/rails/atom.xml" rel="self"/>
+  <title><![CDATA[Tag: Ruby on Rails | Ryo's Engieer Blog]]></title>
+  <link href="http://liooo.github.io/blog/tags/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://liooo.github.io/"/>
-  <updated>2014-11-29T17:50:23+09:00</updated>
+  <updated>2014-11-29T18:12:47+09:00</updated>
   <id>http://liooo.github.io/</id>
   <author>
     <name><![CDATA[Ryo Yamada]]></name>
