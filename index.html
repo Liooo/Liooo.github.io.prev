@@ -61,15 +61,14 @@
 
 <h1 class="author"><a href="/">Ryo Yamada</a></h1>
 
-<a class="lang" href="/jp">→ Japanese Page</a>
+<a class="lang" href="/jp">→ Japanese Page (Not much ready yet)</a>
 
 
 <nav id="main-nav"><ul class="main">
     <li><a href="/">Blog</a></li>
     <li><a href="/about">About</a></li>
-    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/publications">Publications</a></li>
 </ul>
-
 </nav>
 <nav id="sub-nav"><div class="social">
     
@@ -185,7 +184,7 @@
 	<div class="entry-content" itemprop="articleBody">
 		<ul id="markdown-toc">
   <li><a href="#background">Background</a></li>
-  <li><a href="#gems">Gems</a>    <ul>
+  <li><a href="#gems-to-use">Gems to Use</a>    <ul>
       <li><a href="#carrierwave">CarrierWave</a></li>
       <li><a href="#cocoon">Cocoon</a></li>
     </ul>
@@ -201,15 +200,28 @@
 </ul>
 
 <h3 id="background">Background</h3>
-<p>Here I’ll introduce a way to build a file upload form that</p>
+<p>When you build a form in “Rails way”, you don’t have to do much on your own.
+It automatically validates the parameter, and re-renders the form with proper messages in the event of errors.</p>
+
+<p>However, when it comes to file upload form, things get complicated.
+For instance, when the form is redisplayed because of the form error, the file input value is lost.
+You don’t want to make users select the same file again, just because they mistyped their email address or phone number. Especially when they chose
+a bunch of files to upload. It’s also bad in terms of website performance (We don’t want them to send large image files again and again).</p>
+
+<p>We could use javascript file upload plugins (lots of them are opensource, cool, well animated and fantastic). But they normally make source code difficult to manage
+if you’ve been doing things in “Rails way”.</p>
+
+<p>Here I’ll introduce a way to build a file upload form in “Rails way”, which gets along with Rails activeform and requires minimum effort to build, but still does enough.
+Concretely,</p>
 
 <ul>
-  <li>uploads multiple files at a time</li>
-  <li>can add/remove file input fields dynamically</li>
-  <li>shows preview when an image file is chosen</li>
-  <li>if any errors exist in the form, the file inputs memorize and redisplay the selected file</li>
-  <li>can remove existing files</li>
-  <li>use plain html form, NOT xhr (therefore, no file drag and drop feature)</li>
+  <li>Uploads multiple files at a time.</li>
+  <li>Can add/remove multiple file input fields dynamically.</li>
+  <li>Shows preview when an image file is chosen.</li>
+  <li>If an errors exist in the form, the file inputs memorize and redisplay the selected file.</li>
+  <li>Also, the server caches the once-uploaded-file in the event of form redisplay, so no additional network traffic occurs.</li>
+  <li>Can remove existing files.</li>
+  <li>Use plain html form, NOT xhr (therefore, no file drag and drop feature).</li>
 </ul>
 
 <p>See <a href="https://github.com/Liooo/carrierwave-cocoon-file-upload-app-demo">Github Repository</a> for the complete app.</p>
@@ -229,7 +241,7 @@
 </nav>
 </div>
 			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2014
+			<footer id="footer" class="inner">Copyright &copy; 2015
 
     Ryo Yamada
 

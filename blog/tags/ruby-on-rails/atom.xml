@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Ruby on Rails | Ryo's Engieer Blog]]></title>
   <link href="http://liooo.github.io/blog/tags/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://liooo.github.io/"/>
-  <updated>2014-11-30T16:50:55+09:00</updated>
+  <updated>2015-01-06T13:35:51+09:00</updated>
   <id>http://liooo.github.io/</id>
   <author>
     <name><![CDATA[Ryo Yamada]]></name>
@@ -20,7 +20,7 @@
     <id>http://liooo.github.io/blog/2014/11/22/building-multiple-file-upload-form-in-rails-way</id>
     <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#background">Background</a></li>
-  <li><a href="#gems">Gems</a>    <ul>
+  <li><a href="#gems-to-use">Gems to Use</a>    <ul>
       <li><a href="#carrierwave">CarrierWave</a></li>
       <li><a href="#cocoon">Cocoon</a></li>
     </ul>
@@ -36,32 +36,45 @@
 </ul>
 
 <h3 id="background">Background</h3>
-<p>Here I’ll introduce a way to build a file upload form that</p>
+<p>When you build a form in “Rails way”, you don’t have to do much on your own.
+It automatically validates the parameter, and re-renders the form with proper messages in the event of errors.</p>
+
+<p>However, when it comes to file upload form, things get complicated.
+For instance, when the form is redisplayed because of the form error, the file input value is lost.
+You don’t want to make users select the same file again, just because they mistyped their email address or phone number. Especially when they chose
+a bunch of files to upload. It’s also bad in terms of website performance (We don’t want them to send large image files again and again).</p>
+
+<p>We could use javascript file upload plugins (lots of them are opensource, cool, well animated and fantastic). But they normally make source code difficult to manage
+if you’ve been doing things in “Rails way”.</p>
+
+<p>Here I’ll introduce a way to build a file upload form in “Rails way”, which gets along with Rails activeform and requires minimum effort to build, but still does enough.
+Concretely,</p>
 
 <ul>
-  <li>uploads multiple files at a time</li>
-  <li>can add/remove file input fields dynamically</li>
-  <li>shows preview when an image file is chosen</li>
-  <li>if any errors exist in the form, the file inputs memorize and redisplay the selected file</li>
-  <li>can remove existing files</li>
-  <li>use plain html form, NOT xhr (therefore, no file drag and drop feature)</li>
+  <li>Uploads multiple files at a time.</li>
+  <li>Can add/remove multiple file input fields dynamically.</li>
+  <li>Shows preview when an image file is chosen.</li>
+  <li>If an errors exist in the form, the file inputs memorize and redisplay the selected file.</li>
+  <li>Also, the server caches the once-uploaded-file in the event of form redisplay, so no additional network traffic occurs.</li>
+  <li>Can remove existing files.</li>
+  <li>Use plain html form, NOT xhr (therefore, no file drag and drop feature).</li>
 </ul>
 
 <p>See <a href="https://github.com/Liooo/carrierwave-cocoon-file-upload-app-demo">Github Repository</a> for the complete app.</p>
 
 <!-- more -->
 
-<h3 id="gems">Gems</h3>
+<h3 id="gems-to-use">Gems to Use</h3>
 
 <h4 id="carrierwave">CarrierWave</h4>
 
 <p>Use <a href="https://github.com/carrierwaveuploader/carrierwave">CarrierWave</a> to handle files in the app.</p>
 
-<p>You could also consider using the following for file handling.</p>
+<p>You could also consider using the following.</p>
 
 <ul>
   <li><a href="https://github.com/markevans/dragonfly">Dragonfly</a></li>
-  <li><a href="https://github.com/thoughtbot/paperclip">Paperclip</a> (doesn’t support <a href="https://github.com/carrierwaveuploader/carrierwave#making-uploads-work-across-form-redisplays">file cache</a> )</li>
+  <li><a href="https://github.com/thoughtbot/paperclip">Paperclip</a> (but this doesn’t support <a href="https://github.com/carrierwaveuploader/carrierwave#making-uploads-work-across-form-redisplays">file cache</a> )</li>
 </ul>
 
 <h4 id="cocoon">Cocoon</h4>
