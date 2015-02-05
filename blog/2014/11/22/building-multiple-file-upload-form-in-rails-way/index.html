@@ -5,7 +5,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Building a Form for Multiple File Upload in Rails Way - Ryo&#8217;s Engieer Blog</title>
+	<title>Building Form for Multiple File Upload in Rails Way - Ryo&#8217;s Engieer Blog</title>
 	<meta name="author" content="Ryo Yamada">
 
 	
@@ -140,10 +140,10 @@
 
 <h3 id="background">Background</h3>
 <p>When you build a form in “Rails way”, you don’t have to do much on your own.
-It automatically validates the parameter based on the model definition, and re-renders the form with proper messages in the event of errors.</p>
+It automatically validates the parameter, and re-renders the form with proper messages in the event of errors.</p>
 
-<p>However, when it comes to a file upload form, things get complicated.
-For instance, when the form is redisplayed because of errors, the file input value is lost.
+<p>However, when it comes to file upload form, things get complicated.
+For instance, when the form is redisplayed because of the form error, the file input value is lost.
 You don’t want to make users select the same file again, just because they mistyped their email address or phone number. Especially when they chose
 a bunch of files to upload. It’s also bad in terms of website performance (We don’t want them to send large image files again and again).</p>
 
@@ -156,10 +156,10 @@ Concretely,</p>
 <ul>
   <li>Uploads multiple files at a time.</li>
   <li>Can add/remove multiple file input fields dynamically.</li>
-  <li>Can remove already uploaded files.</li>  
-  <li>If any errors exist in the form, the file inputs memorize and redisplay the selected file.</li>
-  <li>The server caches the once-uploaded files when the form is redisplayed, so no additional network traffic occurs.</li>
   <li>Shows preview when an image file is chosen.</li>
+  <li>If an errors exist in the form, the file inputs memorize and redisplay the selected file.</li>
+  <li>Also, the server caches the once-uploaded-file in the event of form redisplay, so no additional network traffic occurs.</li>
+  <li>Can remove existing files.</li>
   <li>Use plain html form, NOT xhr (therefore, no file drag and drop feature).</li>
 </ul>
 
