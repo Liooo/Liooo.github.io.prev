@@ -1,0 +1,385 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Rails E2E Test Environment by Rspec, Turnip, Capybara, Selenium and Poltergeist - Ryo&#8217;s Engieer Blog</title>
+	<meta name="author" content="Ryo Yamada">
+
+	
+	<meta name="description" content="Feb 13th, 2015 BDD, Capybara, PhantomJS, Poltergeist, Rspec, Ruby on Rails, Selenium, Turnip, guard Rails E2E Test Environment by Rspec, Turnip, &hellip;">
+	<meta name="keywords" content="Ruby on RailsRspecTurnipCapybaraSeleniumPhantomJSPoltergeistBDD">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ryo's Engieer Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://liooo.github.io/blog/2015/02/13/rails-e2e-test-environment-by-rspec-turnip-capybara-selenium-and-poltergeist/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-52638400-2']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("ryoyamada3@gmail.com") + "?s=160' alt='Profile Picture' style='width: 85px;' />");
+		});
+	</script>
+	
+</div>
+
+<h1 class="author"><a href="/">Ryo Yamada</a></h1>
+
+<a class="lang" href="/jp">→ Japanese Page (Not much ready yet)</a>
+
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/publications">Publications</a></li>
+</ul>
+</nav>
+<nav id="sub-nav"><div class="social">
+    
+    
+    
+        <a class="twitter" href="http://twitter.com/rio_mt_af" title="Twitter" target="_blank">Twitter</a>
+    
+    
+        <a class="github" href="https://github.com/Liooo" title="GitHub" target="_blank">GitHub</a>
+    
+    
+    
+      <a class="stackoverflow" href="http://stackoverflow.com/users/1330926/ryo" title="StackOverflow" target="_blank"></a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="rss" href="/atom.xml" title="RSS" target="_blank">RSS</a>
+    
+</div>
+</nav>
+
+<div class="header-section">
+    <a href='/blog/tags/bdd' style='font-size: 130.0%'>BDD(1)</a> <a href='/blog/tags/capybara' style='font-size: 130.0%'>Capybara(1)</a> <a href='/blog/tags/guard' style='font-size: 130.0%'>guard(1)</a> <a href='/blog/tags/iterm2' style='font-size: 130.0%'>iTerm2(1)</a> <a href='/blog/tags/phantomjs' style='font-size: 130.0%'>PhantomJS(1)</a> <a href='/blog/tags/poltergeist' style='font-size: 130.0%'>Poltergeist(1)</a> <a href='/blog/tags/rspec' style='font-size: 130.0%'>Rspec(1)</a> <a href='/blog/tags/ruby' style='font-size: 130.0%'>Ruby(1)</a> <a href='/blog/tags/ruby-on-rails' style='font-size: 160.0%'>Ruby on Rails(2)</a> <a href='/blog/tags/selenium' style='font-size: 130.0%'>Selenium(1)</a> <a href='/blog/tags/turnip' style='font-size: 130.0%'>Turnip(1)</a> <a href='/blog/tags/vim' style='font-size: 130.0%'>Vim(1)</a> 
+</div>
+
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div><time class='entry-date' datetime='2015-02-13T12:52:09+09:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span></time></div>
+		<div class="tags">
+
+
+	<a class='tag' href='/blog/tags/bdd/'>BDD</a>, <a class='tag' href='/blog/tags/capybara/'>Capybara</a>, <a class='tag' href='/blog/tags/phantomjs/'>PhantomJS</a>, <a class='tag' href='/blog/tags/poltergeist/'>Poltergeist</a>, <a class='tag' href='/blog/tags/rspec/'>Rspec</a>, <a class='tag' href='/blog/tags/ruby-on-rails/'>Ruby on Rails</a>, <a class='tag' href='/blog/tags/selenium/'>Selenium</a>, <a class='tag' href='/blog/tags/turnip/'>Turnip</a>, <a class='tag' href='/blog/tags/guard/'>guard</a>
+
+
+</div>
+    </div>
+	<h2 class="title" itemprop="name">Rails E2E Test Environment by Rspec, Turnip, Capybara, Selenium and Poltergeist</h2>
+	<div class="entry-content" itemprop="articleBody"><p>Instruction to set up a Rails E2E test environment, which covers Google Chrome, FireFox and PhantomJS as test browsers.</p>
+
+<!-- more -->
+
+<h3 id="basic-setup">Basic Setup</h3>
+
+<p>Add the following lines in Gemfile.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>
+</span><span class="line">  <span class="n">gem</span> <span class="s1">&#39;turnip&#39;</span>
+</span><span class="line">  <span class="n">gem</span> <span class="s1">&#39;rspec-rails&#39;</span>
+</span><span class="line">  <span class="n">gem</span> <span class="s2">&quot;capybara&quot;</span>
+</span><span class="line">  <span class="n">gem</span> <span class="s1">&#39;poltergeist&#39;</span>
+</span><span class="line">  <span class="n">gem</span> <span class="s1">&#39;selenium-webdriver&#39;</span>
+</span><span class="line"><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Then run <code>bundle install</code>.</p>
+
+<p>Execute <code>rails g rspec:install</code>, which generates .rspec file and spec directory.
+You add the following line in .rspec file to tell Rspec to run turnip tests.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>.rspec</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="o">-</span><span class="n">r</span> <span class="n">turnip</span><span class="o">/</span><span class="n">rspec</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Now write features, make features/ directory under spec/ and create a feature file.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>spec/features/my_test.feature</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">Feature: Test a Feature
+</span><span class="line">
+</span><span class="line">  Scenario: Let's test
+</span><span class="line">    When it executes
+</span><span class="line">    Then it passes</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Add steps directory, and write steps.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>spec/features/steps/my_test_steps.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">step</span> <span class="s1">&#39;it executes&#39;</span> <span class="k">do</span>
+</span><span class="line">  <span class="n">visit</span> <span class="s1">&#39;/&#39;</span>
+</span><span class="line"><span class="k">end</span>
+</span><span class="line">
+</span><span class="line"><span class="n">step</span> <span class="s1">&#39;it passes&#39;</span> <span class="k">do</span>
+</span><span class="line">  <span class="n">expect</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">be</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class="line"><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Then create turnip_helper.rb and make it like this.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>spec/turnip_helper.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="nb">require</span> <span class="s1">&#39;turnip&#39;</span>
+</span><span class="line"><span class="nb">require</span> <span class="s1">&#39;turnip/capybara&#39;</span> <span class="c1"># to use Capybara DSL methods in steps</span>
+</span><span class="line"><span class="nb">require</span> <span class="s1">&#39;capybara&#39;</span>
+</span><span class="line"><span class="nb">require</span> <span class="s1">&#39;selenium-webdriver&#39;</span>
+</span><span class="line"><span class="nb">require</span> <span class="s1">&#39;capybara/poltergeist&#39;</span>
+</span><span class="line">
+</span><span class="line"><span class="no">Dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="s2">&quot;../features/steps/**/*steps.rb&quot;</span><span class="p">,</span> <span class="bp">__FILE__</span><span class="p">)</span> <span class="p">){</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="nb">load</span> <span class="n">f</span><span class="p">,</span> <span class="kp">true</span>  <span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="no">Capybara</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
+</span><span class="line">  <span class="n">c</span><span class="o">.</span><span class="n">javascript_driver</span> <span class="o">=</span> <span class="ss">:selenium</span>
+</span><span class="line">  <span class="n">c</span><span class="o">.</span><span class="n">current_driver</span> <span class="o">=</span> <span class="ss">:selenium</span>
+</span><span class="line"><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p><a href="https://github.com/jnicklas/turnip">Turnip</a> explains what turnip_helper.rb is.</p>
+
+<blockquote>
+  <p>Before loading your spec_helper, Turnip also tries to load a file called turnip_helper where you can setup anything specific to your turnip examples. You might find it beneficial to load your steps from this file so that they don’t have to be loaded when you run your other tests.</p>
+</blockquote>
+
+<p>Now your test should be able to run.
+Spin up server by <code>rails server</code> and run <code>rspec</code>.
+You’ll see FireFox browser starts up and the test result is shown in the console.</p>
+
+<h3 id="changing-browser">Changing Browser</h3>
+
+<p>You can see the available browser drivers by <code>Capybara.drivers</code> in ruby code.
+By default you’ll only see <code>rack_test</code>. Here’s how to add other drivers.</p>
+
+<h4 id="phantomjs">PhantomJS</h4>
+
+<p>If you don’t have PhantomJS executable, get it first.
+In MacOS you can install with homebrew.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">brew install phantomjs
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Then tell capybara to use PhantomJS. We specify the <code>:poletergeist</code> which is a PhantomJS driver for Capybara.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>spec/turnip_helper.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="no">Capybara</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
+</span><span class="line">  <span class="n">c</span><span class="o">.</span><span class="n">javascript_driver</span> <span class="o">=</span> <span class="ss">:poltergeist</span>
+</span><span class="line">  <span class="n">c</span><span class="o">.</span><span class="n">current_driver</span> <span class="o">=</span> <span class="ss">:poltergeist</span>
+</span><span class="line"><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="google-chrome">Google Chrome</h4>
+
+<p>Add the following gem.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">gem</span> <span class="s2">&quot;chromedriver-helper&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>This gem installs chromedriver in gem path.
+You can download chromedriver manually as well, but why not be lazy.</p>
+
+<p>Finally, register the driver and tell capybara to use chrome.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>spec/turnip_helper.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="c1"># :selenium_chrome is just a name you set, you can make it whatever you want.</span>
+</span><span class="line"><span class="no">Capybara</span><span class="o">.</span><span class="n">register_driver</span> <span class="ss">:selenium_chrome</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>
+</span><span class="line">  <span class="no">Capybara</span><span class="o">::</span><span class="no">Selenium</span><span class="o">::</span><span class="no">Driver</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="ss">:browser</span> <span class="o">=&gt;</span> <span class="ss">:chrome</span><span class="p">)</span>
+</span><span class="line"><span class="k">end</span>
+</span><span class="line">
+</span><span class="line"><span class="no">Capybara</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
+</span><span class="line">  <span class="n">c</span><span class="o">.</span><span class="n">javascript_driver</span> <span class="o">=</span> <span class="ss">:selenium_chrome</span>
+</span><span class="line">  <span class="n">c</span><span class="o">.</span><span class="n">current_driver</span> <span class="o">=</span> <span class="ss">:selenium_chrome</span>
+</span><span class="line"><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="other-browsers">Other browsers</h4>
+
+<p>I haven’t searched yet, these documents might help.</p>
+
+<p><a href="https://code.google.com/p/selenium/wiki/InternetExplorerDriver">InternetExplorer</a></p>
+
+<p><a href="https://code.google.com/p/selenium/wiki/OperaDriver">Opera</a></p>
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2015
+
+    Ryo Yamada
+
+
+</footer>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'liooo-github-io';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://liooo.github.io/blog/2015/02/13/rails-e2e-test-environment-by-rspec-turnip-capybara-selenium-and-poltergeist/';
+        var disqus_url = 'http://liooo.github.io/blog/2015/02/13/rails-e2e-test-environment-by-rspec-turnip-capybara-selenium-and-poltergeist/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
