@@ -123,6 +123,8 @@
 	<h2 class="title" itemprop="name">Rails E2E Test Environment by Rspec, Turnip, Capybara, Selenium and Poltergeist</h2>
 	<div class="entry-content" itemprop="articleBody"><p>Instruction to set up a Rails E2E test environment, which covers Google Chrome, FireFox and PhantomJS as test browsers.</p>
 
+<p>See <a href="https://github.com/Liooo/rails4_turnip_capybara_selenium_poltergeist">Liooo/rails4_turnip_capybara_selenium_poltergeist</a> for the complete app.</p>
+
 <!-- more -->
 
 <h3 id="basic-setup">Basic Setup</h3>
@@ -148,7 +150,7 @@
 <p>Then run <code>bundle install</code>.</p>
 
 <p>Execute <code>rails g rspec:install</code>, which generates .rspec file and spec directory.
-You add the following line in .rspec file to tell Rspec to run turnip tests.</p>
+Add the following line in .rspec file to tell Rspec to run turnip tests.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>.rspec</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="o">-</span><span class="n">r</span> <span class="n">turnip</span><span class="o">/</span><span class="n">rspec</span>

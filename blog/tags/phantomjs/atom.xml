@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: PhantomJS | Ryo's Engieer Blog]]></title>
   <link href="http://liooo.github.io/blog/tags/phantomjs/atom.xml" rel="self"/>
   <link href="http://liooo.github.io/"/>
-  <updated>2015-02-14T14:08:49+09:00</updated>
+  <updated>2015-02-14T14:46:23+09:00</updated>
   <id>http://liooo.github.io/</id>
   <author>
     <name><![CDATA[Ryo Yamada]]></name>
@@ -19,6 +19,8 @@
     <updated>2015-02-13T12:52:09+09:00</updated>
     <id>http://liooo.github.io/blog/2015/02/13/rails-e2e-test-environment-by-rspec-turnip-capybara-selenium-and-poltergeist</id>
     <content type="html"><![CDATA[<p>Instruction to set up a Rails E2E test environment, which covers Google Chrome, FireFox and PhantomJS as test browsers.</p>
+
+<p>See <a href="https://github.com/Liooo/rails4_turnip_capybara_selenium_poltergeist">Liooo/rails4_turnip_capybara_selenium_poltergeist</a> for the complete app.</p>
 
 <!-- more -->
 
@@ -39,7 +41,7 @@ end
 <p>Then run <code>bundle install</code>.</p>
 
 <p>Execute <code>rails g rspec:install</code>, which generates .rspec file and spec directory.
-You add the following line in .rspec file to tell Rspec to run turnip tests.</p>
+Add the following line in .rspec file to tell Rspec to run turnip tests.</p>
 
 <p><code>ruby .rspec
 -r turnip/rspec
